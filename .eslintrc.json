@@ -1,0 +1,53 @@
+{
+    "ignorePatterns": [
+        "src/service-worker.ts",
+        "src/setupProxy.js",
+        "scripts/",
+        "config/",
+        "build/",
+        "doc/",
+        "public/"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
+        // "prettier/@typescript-eslint",
+        // "plugin:prettier/recommended"
+    ],
+    "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+    "env": {
+        "browser": true,
+        "jasmine": true,
+        "jest": true
+    },
+    "rules": {
+        "prettier/prettier": ["error"],
+        "@typescript-eslint/explicit-member-accessibility": 0,
+        "@typescript-eslint/explicit-function-return-type": 0,
+        "@typescript-eslint/explicit-module-boundary-types": 0,
+        "react/no-unescaped-entities": 0,
+        "react/prop-types": 0,
+        "padding-line-between-statements": [
+            "error",
+            { "blankLine": "always", "prev": "*", "next": "return" },
+            { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+            { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] },
+            { "blankLine": "always", "prev": ["directive", "import"], "next": "*" },
+            { "blankLine": "any", "prev": ["directive", "import"], "next": ["directive", "import"] }
+        ],
+        "react-hooks/rules-of-hooks": 2,
+        "react-hooks/exhaustive-deps": 1,
+        "@typescript-eslint/no-explicit-any": 0,
+        "react/display-name": 0,
+        "no-debugger": 0,
+        "@typescript-eslint/explicit-module-boundary-types": 0
+    },
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
+    },
+    "parser": "@typescript-eslint/parser"
+}
