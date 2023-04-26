@@ -1,46 +1,22 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
-import { Button, Divider, message, Select, Tabs } from 'antd';
-import PageTable from '@/components/PageTable';
-import { ActionType, ProColumns } from '@ant-design/pro-table';
+import { Menu } from 'antd';
 
 const App: FC = () => {
-  const tableRef = useRef<ActionType>();
-  const formRef = useRef<any>();
-  const columns: ProColumns<any>[] = [
-    {
-      title: '单据标题',
-      dataIndex: 'wforderTitle',
-      ellipsis: true,
-      search: false,
-      width: 200,
-    },
-    {
-      title: '申请单号',
-      dataIndex: 'wforderId',
-      order: 4,
-      ellipsis: true,
-      hideInTable: true,
-    },
-    {
-      title: '申请人',
-      dataIndex: 'creatorName',
-      order: 3,
-      formItemProps: {
-        name: 'peopleOrOrder',
-      },
-    },
-  ];
-
   return (
     <>
-      <PageTable<any>
-        actionRef={tableRef}
-        formRef={formRef}
-        rowKey={'id'}
-        columns={columns}
-        options={false}
-        size="small"
-      />
+      <div>组件封装：</div>
+      <Menu
+        items={[
+          {
+            label: '列表Table',
+            key: 'table',
+            onClick: () => {
+              console.log(2);
+            },
+          },
+          { label: '文件上传Upload', key: 'upload' },
+        ]}
+      ></Menu>
     </>
   );
 };

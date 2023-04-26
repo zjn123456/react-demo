@@ -7,7 +7,7 @@ export type PageTableType<T> = ProTableProps<T, any>;
 
 const PageTable = <T extends Record<string, any>>(props: PageTableType<T>) => {
   const container: any = useMemo<Window | HTMLElement>(() => {
-    const contentDom = document.querySelectorAll('.ant-layout-content');
+    const contentDom = document.querySelectorAll('.ant-Layout-content');
     const containerDom = contentDom[contentDom?.length - 1];
 
     return containerDom as any;
@@ -23,18 +23,17 @@ const PageTable = <T extends Record<string, any>>(props: PageTableType<T>) => {
       className={'pageTable'}
       columnEmptyText={'--'}
       rowKey={(record) => record.id || record?.orgId || record?.orderNo || record?.index}
-      scroll={{ ...props, x: 1000, scrollToFirstRowOnChange: true }}
       form={{
         labelAlign: 'right',
         autoComplete: 'off',
         autoFocusFirstInput: false,
         labelWidth: 'auto',
       }}
-      // scroll={{
-      //   x: 1000,
-      //   // y: 'calc(100vh - 310px)',
-      //   // scrollToFirstRowOnChange: true,
-      // }}
+      scroll={{
+        x: 1000,
+        // y: 'calc(100vh - 310px)',
+        // scrollToFirstRowOnChange: true,
+      }}
       sticky={{
         offsetHeader: 0,
         getContainer: () => container,

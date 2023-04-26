@@ -1,0 +1,40 @@
+.layout-side-menu {
+  &:global(.ant-layout-sider) {
+    position: relative;
+    margin-right: 1px;
+
+    :global(.ant-layout-sider-children) {
+      height: calc(100vh - 90px);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    :global(.ant-menu) {
+      background: #fff;
+      border-right: 0;
+    }
+
+    .layout-side-collapse {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      height: 40px;
+      line-height: 40px;
+      border-top: 1px solid #F3F4F7;
+      cursor: pointer;
+      text-align: center;
+      color: #A3A7BF;
+      box-sizing: content-box;
+
+      &:hover {
+        color: @primary-color;
+      }
+    }
+
+    .side-menu-icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
